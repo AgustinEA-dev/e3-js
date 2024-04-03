@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input {
+    margin-bottom: 20px;
+    font-size: 20px;
+    border: none;
+    border-style: none;
+    outline: none;
+    padding: 10px;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px;
+    background-color: #fb5607;
+    border: none;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.card {
+    margin-top: 20px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.card-title,
+.card-price {
+    padding: 20px 0 20px 0
+}
+
+.card-title {
+    font-size: 20px;
+}
+
+.card-price {
+    font-size: 15px;
+}
+
+img {
+    border-radius: 10px;
+}

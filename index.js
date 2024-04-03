@@ -52,26 +52,30 @@ const container = document.getElementById('container')
 
 // const value = parseInt(input.value)
 
+
 form.addEventListener('submit', (e) => {
   e.preventDefault()
-  pizzas.forEach(pizza => {
-    if (pizza.id === parseInt(input.value)) {
-      container.innerHTML = `
-      <div class="card">
-      <h3 class="card-title">Nombre: ${pizza.nombre}</h3>
-      <h3 class="card-price">Precio: ${pizza.precio}</h3>
-      <img src="${pizza.imagen}" />
-  </div>
-      `
-      localStorage.setItem("últimaBuscada", JSON.stringify(pizza));
-    }
-    // else {
-    //   container.innerHTML = `
-    //   <div>
-    //   <h3 class="error">No encontramos esa opción :(</h3>
-    //   </div>
-    //   `
-    // }
-  });
-})
+  const getPizza = pizzas.find(
+    (p) => p.id === parseInt(input.value))
+  const pizzaId = getPizza
+  if (pizzaId) {
+    const pizza = `
+    <div class="card">
+    <h3 class="card-title">Nombre: ${pizzaId.nombre}</h3>
+    <h3 class="card-price">Precio: ${pizzaId.precio}</h3>
+    <img src="${pizzaId.imagen}" />
+    </div>
+    `
+    container.innerHTML = pizza
+    localStorage.setItem("última búsqueda", JSON.stringify(pizzaId));
 
+  } else {
+    const err = `
+<div>
+<h3 class="error">No encontramos esa opción :(</h3>
+</div>
+`
+    container.innerHTML = err
+  }
+
+})
